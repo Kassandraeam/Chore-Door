@@ -43,7 +43,6 @@ const isBot = (door) => {
 };
 
 //Writing Play and Game Over Logic
-
 const gameOver = (status) => {
   if (status === 'win'){
     startButton.innerHTML = 'You win! Play again?';
@@ -114,7 +113,7 @@ const startRound = () => {
   doorImage3.src = closedDoorPath;
   numClosedDoors = 3;
   currentlyPlaying = true;
-  startButton ='Good Luck!';
+  startButton.innerHTML ='Good Luck!'; //I had left out the .innerHTML, so it wasn't updating when the game was ending.
   randomChoreDoorGenerator();
 };
 
