@@ -9,14 +9,32 @@ const isClicked = (door) => {
     return true;
   } else {
     return false;
-  }
+  };
 };
 
 const isBot = (door) => {
   if (door.src === botDoorPath){
     return true;
-  }
+  };
 };
+
+const gameOver = (status) => {
+  if (status === 'win'){
+    startButton.innerHTML = 'You win! Play again?';
+  } else {
+    startButton.innerHTML = 'Game over! Play again?'
+  }
+  currentlyPlaying = false;
+};
+
+const playDoor = (door) => {
+  numClosedDoors--;
+  if (numClosedDoors === 0){
+    gameOver('win');
+  } else if (isBot(door) === true){
+    gameOver();
+  }
+}
 
 let botDoorPath = 'https://content.codecademy.com/projects/chore-door/images/robot.svg';
 let beachDoorPath = 'https://content.codecademy.com/projects/chore-door/images/beach.svg';
