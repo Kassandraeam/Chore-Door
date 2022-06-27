@@ -6,8 +6,14 @@ let doorImage2 = document.getElementById('door2');
 let doorImage3 = document.getElementById('door3');
 let startButton = document.getElementById('start');
 
+//testing
 
+// let botDoorPath = '/Users/kassandraeam/Codecademy/Chore-Door/images/Rosaria_Glare.png';
+// let beachDoorPath = '/Users/kassandraeam/Codecademy/Chore-Door/images/Rosaria_Glare.png';
+// let spaceDoorPath = '/Users/kassandraeam/Codecademy/Chore-Door/images/Rosaria_Glare.png';
+// let closedDoorPath = 'https://content.codecademy.com/projects/chore-door/images/closed_door.svg';
 
+//original
 let botDoorPath = 'https://content.codecademy.com/projects/chore-door/images/robot.svg';
 let beachDoorPath = 'https://content.codecademy.com/projects/chore-door/images/beach.svg';
 let spaceDoorPath = 'https://content.codecademy.com/projects/chore-door/images/space.svg';
@@ -37,6 +43,7 @@ const isBot = (door) => {
 };
 
 //Writing Play and Game Over Logic
+
 const gameOver = (status) => {
   if (status === 'win'){
     startButton.innerHTML = 'You win! Play again?';
@@ -101,3 +108,14 @@ startButton.onclick = () => {
 }
 
 // Start a game round
+const startRound = () => {
+  doorImage1.src = closedDoorPath;
+  doorImage2.src = closedDoorPath;
+  doorImage3.src = closedDoorPath;
+  numClosedDoors = 3;
+  currentlyPlaying = true;
+  startButton ='Good Luck!';
+  randomChoreDoorGenerator();
+};
+
+startRound();
