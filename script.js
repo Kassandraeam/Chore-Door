@@ -36,6 +36,8 @@ const playDoor = (door) => {
   }
 }
 
+//Completed 'Writing Play and Game Over Logic'
+
 let botDoorPath = 'https://content.codecademy.com/projects/chore-door/images/robot.svg';
 let beachDoorPath = 'https://content.codecademy.com/projects/chore-door/images/beach.svg';
 let spaceDoorPath = 'https://content.codecademy.com/projects/chore-door/images/space.svg';
